@@ -1,0 +1,546 @@
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #f8f8f8;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: saturate(180%) blur(15px);
+  z-index: 1100;
+  padding: 0.8rem 0;
+  display: flex;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255 97 109 / 0.15);
+}
+.navbar.scrolled {
+  background: #f714be;
+  box-shadow: 0 3px 15px rgba(247, 49, 247, 0.6);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff5f5;
+  font-weight: 700;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  user-select: none;
+}
+.logo img {
+  margin-right: 8px;
+  filter: drop-shadow(0 0 3px #dbbc07);
+}
+.logo lottie-player {
+  filter: drop-shadow(0 0 4px #ffd6d6);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+.nav-links li a {
+  color: #ffd6d6;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #8c24e0;
+  transition: width 0.3s ease;
+}
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #fff5f5;
+}
+.nav-links li a:hover::after,
+.nav-links li a:focus::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background: url('banner.webp') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(166, 39, 224, 0.7), rgba(129, 24, 214, 0.8));
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 650px;
+  color: #fff5f5;
+  text-shadow: 0 0 15px #8361ff;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  min-height: 4rem; /* For typed.js stable height */
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  color: #ffd6d6cc;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  padding: 0.85rem 2.2rem;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  background: linear-gradient(270deg, #cd61ff, #f120f1);
+  color: #fff5f5;
+  box-shadow: 0 0 12px #c038e9aa;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.4s ease;
+  user-select: none;
+  text-shadow: 0 0 6px #d128f3;
+}
+.btn:hover,
+.btn:focus {
+  background-position: right center;
+  box-shadow: 0 0 25px #ec20d1cc, 0 0 45px #e226e9cc;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Glow animation for buttons */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px #ee23ddaa, 0 0 15px #ee22d399;
+  }
+  50% {
+    box-shadow: 0 0 20px #f02ac5cc, 0 0 35px #ed30f3dd;
+  }
+}
+.btn-glow {
+  animation: glow 3s infinite ease-in-out alternate;
+  background: linear-gradient(270deg, #f029e6, #f832de, #f717d1);
+  background-size: 600% 600%;
+  color: #fff5f5;
+}
+
+/* Pulsing button animation */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px #dd20ee99;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #f529f5cc;
+  }
+}
+.btn-pulse {
+  animation: pulse 2.5s infinite ease-in-out;
+  background: #e91df0;
+  color: #fff5f5;
+  border-radius: 50px;
+  padding: 1rem 2.4rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px #f11af1bb;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  user-select: none;
+}
+.btn-pulse:hover,
+.btn-pulse:focus {
+  box-shadow: 0 0 45px #ec26e2dd, 0 0 65px #ec28f3dd;
+  outline: none;
+}
+
+/* Floating Hearts Lottie in Hero */
+.floating-hearts {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: 10%;
+  right: 10%;
+  opacity: 0.4;
+  pointer-events: none;
+  filter: drop-shadow(0 0 5px #f32be9);
+  animation: floatUpDown 6s ease-in-out infinite;
+  z-index: 5;
+}
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+/* Sections */
+.section {
+  padding: 5rem 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.section-pink {
+  background: #1f1f1f;
+  color: #e62aeccc;
+  box-shadow: inset 0 8px 40px -15px #ff616d44;
+  border-radius: 12px;
+  margin: 3rem 0;
+}
+.section-pink {
+  background: #b05fb8;
+  color: #f021df;
+  border-radius: 12px;
+  margin: 3rem 0;
+  box-shadow: 0 0 15px #ee20e488;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
+  color: #fff5f5;
+  text-align: center;
+  text-shadow: 0 0 8px #f829d6cc;
+  user-select: none;
+}
+
+/* Section Text */
+.section-text {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #ffd6d6cc;
+}
+
+/* Section Lottie Animations */
+.section-lottie {
+  width: 140px;
+  height: 140px;
+  margin: 2rem auto 0;
+  display: block;
+  filter: drop-shadow(0 0 6px #f521eabb);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.card {
+  background: #3a3a3a;
+  padding: 1.8rem 1.6rem;
+  border-radius: 18px;
+  width: 280px;
+  box-shadow: 0 0 20px #ee1dba88;
+  color: #fff5f5;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover,
+.card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 0 38px #f725f7cc;
+  outline: none;
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+.card p {
+  font-size: 1rem;
+  color: #f823e6;
+}
+
+/* Testimonials */
+.testimonials {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.testimonial {
+  background: #2a2a2a;
+  border-left: 5px solid #ec1cd1;
+  padding: 1.5rem 1.8rem;
+  border-radius: 12px;
+  max-width: 280px;
+  font-style: italic;
+  color: #ffdad1;
+  box-shadow: 0 0 15px #f31cf388;
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+}
+.testimonial:hover,
+.testimonial:focus {
+  box-shadow: 0 0 28px #e91cf0cc;
+  outline: none;
+}
+.testimonial strong {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffd740;
+  text-shadow: 0 0 6px #ffd740cc;
+}
+
+/* Daily Tips */
+.tips-list {
+  list-style: none;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-left: 0;
+  font-size: 1.1rem;
+  color: #f8d7a8;
+  line-height: 1.6;
+}
+.tips-list li {
+  margin-bottom: 1.2rem;
+  padding-left: 1.8rem;
+  position: relative;
+  cursor: default;
+  user-select: none;
+}
+.tips-list li::before {
+  content: '🌟';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.3rem;
+  transform: translateY(2px);
+}
+
+/* Download Form */
+.download-container form {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  flex: 1 1 200px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  border-radius: 40px;
+  border: 1px solid #f01ef099;
+  background: #1e1e1e;
+  color: #ffd6d6;
+  transition: border-color 0.3s ease;
+  user-select: text;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: #f31ff3;
+  outline: none;
+  box-shadow: 0 0 10px #dc22ecbb;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ffb6b9;
+  font-weight: 600;
+  user-select: none;
+  font-size: 0.95rem;
+}
+.checkbox-label input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #eb20eb;
+}
+
+/* Community Section */
+.community-container {
+  text-align: center;
+}
+.community-container p {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: #ffb9bdcc;
+  user-select: none;
+}
+
+/* Footer Styles */
+.footer {
+  background: #1f1f1f;
+  color: #ccc;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+.footer-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.footer-text {
+  margin-bottom: 1rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+.footer-nav a {
+  color: #ff616d;
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+.footer-contact a {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer-contact a:hover {
+  color: #ff8f95;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .tips-list {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+  .download-container form {
+    max-width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  .btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+/* Love Section under Hero */
+.love-section {
+  background: radial-gradient(circle at top left, #d31cf8 0%, #f165da 80%);
+  position: relative;
+  color: #fff5f5;
+  box-shadow: 0 0 25px #ff61f2aa inset;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+}
+.love-container {
+  text-align: center;
+  max-width: 760px;
+}
+.love-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 8px #f133e2cc;
+}
+.love-text {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #ffe8e9;
+  margin-bottom: 2.2rem;
+}
+.love-hearts {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 6px #ec26bb);
+  animation: floatUpDown 7s ease-in-out infinite;
+}
+/* Use existing @keyframes floatUpDown from hero hearts */
