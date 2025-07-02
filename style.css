@@ -27,7 +27,7 @@ body, html {
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(18, 18, 18, 0.75);
+  background: rgba(247, 5, 206, 0.75);
   backdrop-filter: saturate(180%) blur(15px);
   z-index: 1100;
   padding: 0.8rem 0;
@@ -36,11 +36,12 @@ body, html {
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 6px rgba(255 97 109 / 0.15);
 }
-.navbar.scrolled {
-  background: #f714be;
-  box-shadow: 0 3px 15px rgba(247, 49, 247, 0.6);
-}
+.navbar { transition: background 0.4s ease, box-shadow 0.4s ease; }
 
+.navbar.scrolled {
+  background: rgba(18,18,18,0.9);           /* darker translucent */
+  box-shadow: 0 3px 12px rgba(255,97,109,0.35);
+}
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -105,13 +106,14 @@ body, html {
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(166, 39, 224, 0.7), rgba(129, 24, 214, 0.8));
-  z-index: 0;
+.hero-overlay,
+.love-section {
+  /* unified gradient so no abrupt colour jump */
+  background: radial-gradient(circle at top left, #ff8f95 0%, #2a2a2a 85%);
+  transition: background 0.6s ease;
 }
 
 .hero-content {
@@ -168,7 +170,7 @@ body, html {
   }
 }
 .btn-glow {
-  animation: glow 3s infinite ease-in-out alternate;
+  animation: glow 1s infinite ease-in-out alternate;
   background: linear-gradient(270deg, #f029e6, #f832de, #f717d1);
   background-size: 600% 600%;
   color: #fff5f5;
@@ -265,17 +267,31 @@ body, html {
   margin: 0 auto 2rem;
   text-align: center;
   line-height: 1.5;
-  color: #ffd6d6cc;
+  color: #ee0fb6cc;
 }
 
-/* Section Lottie Animations */
 .section-lottie {
-  width: 140px;
-  height: 140px;
-  margin: 2rem auto 0;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 3rem auto 0;
   display: block;
-  filter: drop-shadow(0 0 6px #f521eabb);
+
+  /* Elegant style */
+  border-radius: 16px;                      /* soft round corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* subtle depth */
+  border: 4px solid #f815e5;                /* soft pink outline */
+  object-fit: cover;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.section-lottie:hover {
+  transform: scale(1.015);
+  box-shadow: 0 10px 36px rgba(255, 105, 135, 0.3);
+  border-color: #f51de3;
+}
+
 
 /* Cards */
 .cards {
@@ -513,13 +529,16 @@ input[type="tel"]:focus {
 
 /* Love Section under Hero */
 .love-section {
-  background: radial-gradient(circle at top left, #d31cf8 0%, #f165da 80%);
+  background: radial-gradient(circle at top left, #6d0581 0%, #f5c33c 80%);
   position: relative;
   color: #fff5f5;
-  box-shadow: 0 0 25px #ff61f2aa inset;
+  box-shadow: 0 0 25px #5c0264aa inset;
   overflow: hidden;
   border-radius: 0 0 20px 20px;
+  padding-top: 80px;  /* 👈 Added */
+  padding-bottom: 80px; /* 👈 Optional: adjust to balance */
 }
+
 .love-container {
   text-align: center;
   max-width: 760px;
@@ -528,7 +547,7 @@ input[type="tel"]:focus {
   font-size: 2.3rem;
   font-weight: 800;
   margin-bottom: 0.8rem;
-  text-shadow: 0 0 8px #f133e2cc;
+  text-shadow: 0 0 8px #f30fafcc;
 }
 .love-text {
   font-size: 1.15rem;
@@ -540,7 +559,36 @@ input[type="tel"]:focus {
   width: 140px;
   height: 140px;
   margin: 0 auto;
-  filter: drop-shadow(0 0 6px #ec26bb);
+  filter: drop-shadow(0 0 6px #6b275a);
   animation: floatUpDown 7s ease-in-out infinite;
 }
 /* Use existing @keyframes floatUpDown from hero hearts */
+
+#partner-tracker {
+  text-align: center;
+  padding: 60px 20px;
+  background: #acc3e4;
+  border-radius: 16px;
+  margin: 40px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.tracker-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.mock-tracker-box {
+  margin-top: 30px;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px dashed #b069eb;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.mock-note {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: #555;
+}

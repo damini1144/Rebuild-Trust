@@ -10,6 +10,23 @@
 
   <!-- AOS animations -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+   <head>
+  <!-- ✅ Lottie script FIRST -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Your existing tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trust Rebuild</title>
+
+  <!-- Styles and other scripts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    async defer
+  ></script>
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -68,6 +85,7 @@
       </button>
     </div>
     </section>
+    
     <section id="welcome-love" class="section section-light love-section" data-aos="fade-up">
   <div class="container love-container">
     <h2 class="love-title">Love Is Still Here 💖</h2>
@@ -87,8 +105,6 @@
       aria-hidden="true">
     </lottie-player>
   </div>
-</section>
-
     <!-- Hearts decoration -->
     <lottie-player
       src="https://assets2.lottiefiles.com/packages/lf20_7o5i7v9v.json"
@@ -100,6 +116,28 @@
       aria-hidden="true">
     </lottie-player>
   </section>
+  
+<section id="partner-tracker" class="section section-light" data-aos="fade-up">
+  <div class="container tracker-container">
+    <h2 class="section-title">Track Your Partner Live 🗺️</h2>
+    <p class="section-text">Location sharing can help rebuild trust — knowing your partner is where they say they are brings peace of mind.</p>
+
+    <div class="mock-tracker-box">
+      <!-- Animated GPS Icon -->
+      <lottie-player
+        src="https://assets5.lottiefiles.com/packages/lf20_rscw6pvb.json"
+        background="transparent"
+        speed="1"
+        loop
+        autoplay
+        style="width: 120px; height: 120px;"
+        aria-hidden="true">
+      </lottie-player>
+
+      <p class="mock-note">GPS signal active: Waiting for your partner to share location…</p>
+    </div>
+  </div>
+</section>
 
   <!-- 🤝 Emotional Connection -->
   <section id="emotional" class="section section-light" data-aos="fade-up">
@@ -108,15 +146,13 @@
       <p class="section-text">
         Many couples face trust issues — distance, doubt, fear. It’s normal, but it can be healed with open talks and clear steps.
       </p>
-      <lottie-player
-        src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-        class="section-lottie"
-        aria-hidden="true">
-      </lottie-player>
+      <video 
+      src="couple.mp4"
+  class="section-lottie"
+  autoplay
+  muted
+  loop
+  playsinline></video>
     </div>
   </section>
 

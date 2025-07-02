@@ -66,27 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Sticky Navbar Background Color Change On Scroll
   const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+ window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 
   // Auto-hide Hero Header on Scroll Down, Show on Scroll Up (desktop only)
   const hero = document.getElementById('hero');
   let lastScrollTop = 0;
   window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    if (currentScroll > lastScrollTop && currentScroll > hero.offsetHeight / 2) {
-      hero.style.transform = 'translateY(-100%)';
-    } else {
-      hero.style.transform = 'translateY(0)';
-    }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-
+  if (window.scrollY > 200) {        // wait until after Love section
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
   // Smooth scrolling for internal anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -117,3 +114,47 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(lottieScript);
   }
 });
+// script.js (or inline in HTML before </body>)
+function initMap() {
+  const center = { lat: 20.5937, lng: 78.9629 }; // Center on India or your preferred location
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 5,
+    center: center,
+  });
+
+  // Example partner locations
+  const partners = [
+    { name: "Partner A", lat: 19.076, lng: 72.8777 },
+    { name: "Partner B", lat: 28.7041, lng: 77.1025 },
+    { name: "Partner C", lat: 13.0827, lng: 80.2707 },
+  ];
+
+  partners.forEach(({ name, lat, lng }) => {
+    const marker = new google.maps.Marker({
+      position: { lat, lng },
+      map,
+      title: name,
+      animation: google.maps.Animation.DROP,
+    });
+
+    // Bounce animation on hover
+    marker.addListener("mouseover", () => marker.setAnimation(google.maps.Animation.BOUNCE));
+    marker.addListener("mouseout", () => marker.setAnimation(null));
+
+    // Info window on click
+    const infoWindow = new google.maps.InfoWindow({
+      content: `<strong>${name}</strong><br>Live Location`,
+    });
+    marker.addListener("click", () => infoWindow.open(map, marker));
+  });
+}
+function initMap() {
+  // ... your existing map code ...
+
+  // Hide loading placeholder once map initializes
+  const placeholder = document.getElementById("map-placeholder");
+  if (placeholder) {
+    placeholder.style.display = "none";
+  }
+}
