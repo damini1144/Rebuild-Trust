@@ -23,10 +23,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-    async defer
-  ></script>
+   
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -85,7 +82,6 @@
       </button>
     </div>
     </section>
-    
     <section id="welcome-love" class="section section-light love-section" data-aos="fade-up">
   <div class="container love-container">
     <h2 class="love-title">Love Is Still Here 💖</h2>
@@ -118,25 +114,17 @@
   </section>
   
 <section id="partner-tracker" class="section section-light" data-aos="fade-up">
-  <div class="container tracker-container">
+  <div class="container">
     <h2 class="section-title">Track Your Partner Live 🗺️</h2>
-    <p class="section-text">Location sharing can help rebuild trust — knowing your partner is where they say they are brings peace of mind.</p>
-
-    <div class="mock-tracker-box">
-      <!-- Animated GPS Icon -->
-      <lottie-player
-        src="https://assets5.lottiefiles.com/packages/lf20_rscw6pvb.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-        style="width: 120px; height: 120px;"
-        aria-hidden="true">
-      </lottie-player>
-
-      <p class="mock-note">GPS signal active: Waiting for your partner to share location…</p>
-    </div>
+    <div id="map" style="width: 100%; height: 400px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1);"></div>
   </div>
+  <div id="map" style="width: 100%; height: 400px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative;">
+  <div id="map-placeholder" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #555; font-size: 1.2rem;">
+    <div style="margin-bottom: 10px;">Loading map...</div>
+    <img src="https://cdn-icons-png.flaticon.com/512/252/252025.png" alt="Map loading icon" style="width: 40px; opacity: 0.5;" />
+  </div>
+</div>
+
 </section>
 
   <!-- 🤝 Emotional Connection -->
