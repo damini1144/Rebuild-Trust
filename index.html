@@ -5,48 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rebuild Trust, Heal Your Love</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- AOS animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
-   <head>
-  <!-- ✅ Lottie script FIRST -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-  <!-- Your existing tags -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trust Rebuild</title>
-
-  <!-- Styles and other scripts -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-   
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Main stylesheet -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
-  <!-- 🌟 Navbar -->
+ <!-- 🌟 Navbar -->
   <nav class="navbar">
     <div class="container nav-container">
-      <a href="#hero" class="logo" aria-label="Trust Rebuild Logo">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Logo" width="40"/>
-        TrustRebuild
-        <lottie-player
-          src="https://assets9.lottiefiles.com/packages/lf20_4t8gf69i.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-          style="width:24px;height:24px;margin-left:6px;vertical-align:middle"
-          aria-hidden="true">
-        </lottie-player>
-      </a>
+      <a href="#hero" class="logo" style="background:#222;padding:4px 8px;">
+      <img src="assets/images/handshake.svg" alt="logo" height="32" />
+      <span class="logo-text" style="color:#fff;font-size:1.4rem;">TrustRebuild✨</span>
+    </a>
 
-      <!-- Scroll‑to section links -->
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#emotional">About</a></li>
@@ -59,108 +38,51 @@
       </ul>
     </div>
   </nav>
-
-  <!-- 🏠 Hero / Top Banner -->
-  <section id="hero" class="section hero-section" aria-label="Hero banner">
+  <!-- 🏠 Hero Section -->
+  <section id="hero" class="section hero-section">
     <div class="hero-overlay"></div>
-
-    <div class="container hero-content" data-aos="fade-in" data-aos-delay="300">
+    <div class="container hero-content" data-aos="fade-in">
       <h1 id="typed-headline" class="hero-title"></h1>
-      <p class="hero-subtitle">Practical steps to rebuild trust and feel secure again</p>
-
-      <button class="btn btn-glow" onclick="document.querySelector('#learn').scrollIntoView({behavior:'smooth'})" aria-label="Get Started">
+      <p class="hero-subtitle">Lost the One You Love?💞Let’s Help You Reconnect.</p>
+      <button class="btn btn-glow" onclick="document.querySelector('#learn').scrollIntoView({behavior:'smooth'})">
         Get Started
-        <lottie-player
-          src="https://assets1.lottiefiles.com/packages/lf20_5ngs2ksb.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-          style="width:24px;height:24px;margin-left:8px"
-          aria-hidden="true">
-        </lottie-player>
       </button>
     </div>
-    </section>
-    <section id="welcome-love" class="section section-light love-section" data-aos="fade-up">
-  <div class="container love-container">
-    <h2 class="love-title">Love Is Still Here 💖</h2>
-    <p class="love-text">
-      Even when trust feels fragile, the heartbeat of love remains.
-      Let these moments remind you that <strong>your relationship is worth every gentle step forward.</strong>
-    </p>
-
-    <!-- Floating Hearts Animation -->
-    <lottie-player
-      src="https://assets5.lottiefiles.com/packages/lf20_tldhlv.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay
-      class="love-hearts"
-      aria-hidden="true">
-    </lottie-player>
-  </div>
-    <!-- Hearts decoration -->
-    <lottie-player
-      src="https://assets2.lottiefiles.com/packages/lf20_7o5i7v9v.json"
-      background="transparent"
-      speed="0.8"
-      loop
-      autoplay
-      class="floating-hearts"
-      aria-hidden="true">
-    </lottie-player>
   </section>
-  
-<section id="partner-tracker" class="section section-light" data-aos="fade-up">
-  <div class="container">
-    <h2 class="section-title">Track Your Partner Live 🗺️</h2>
-    <div id="map" style="width: 100%; height: 400px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1);"></div>
-  </div>
-  <div id="map" style="width: 100%; height: 400px; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.1); position: relative;">
-  <div id="map-placeholder" style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #555; font-size: 1.2rem;">
-    <div style="margin-bottom: 10px;">Loading map...</div>
-    <img src="https://cdn-icons-png.flaticon.com/512/252/252025.png" alt="Map loading icon" style="width: 40px; opacity: 0.5;" />
-  </div>
-</div>
 
-</section>
+  <!-- 💖 Love Message -->
+  <section id="welcome-love" class="section section-light love-section" data-aos="fade-up">
+    <div class="container love-container">
+      <h2 class="love-title">Love Is Still Here 💖</h2>
+      <br>
 
-  <!-- 🤝 Emotional Connection -->
+     <br>
+      <p class="love-text">Even when trust feels fragile, the heartbeat of love remains.<br>
+      <p>Every unanswered question still longs for a gentle reply.<br>
+      <p>Sometimes, love just needs a way back home.<br>
+      <p><b>Your relationship is worth every gentle step forward.</b><br>
+      <strong>A silent distance doesn’t mean the story is over.🫶</strong>
+      </div>
+  </section>
+
+  <!-- 🤝 Emotional Section -->
   <section id="emotional" class="section section-light" data-aos="fade-up">
     <div class="container">
       <h2 class="section-title">You’re Not Alone 🤝❤️</h2>
-      <p class="section-text">
-        Many couples face trust issues — distance, doubt, fear. It’s normal, but it can be healed with open talks and clear steps.
-      </p>
-      <video 
-      src="couple.mp4"
-  class="section-lottie"
-  autoplay
-  muted
-  loop
-  playsinline></video>
+      <p class="section-text">"She disappeared without saying anything...<br>
+      <p>He waited, confused and hurt...<br>one day, they found this website and reached out to us."</p>
+      <video src="assets/videos/couple.mp4" class="section-lottie" autoplay muted loop playsinline></video>
     </div>
   </section>
 
-  <!-- 📚 What You'll Learn -->
+  <!-- 📚 Learn Section -->
   <section id="learn" class="section section-dark">
     <div class="container">
       <h2 class="section-title">What You’ll Learn 📚</h2>
       <div class="cards">
-        <article class="card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
-          <h3>Talk Openly 🗣️</h3>
-          <p>Learn how to share feelings and listen without fear.</p>
-        </article>
-        <article class="card" data-aos="fade-up" data-aos-delay="250" tabindex="0">
-          <h3>Set Boundaries 🚧</h3>
-          <p>Discover healthy boundaries that protect both partners.</p>
-        </article>
-        <article class="card" data-aos="fade-up" data-aos-delay="400" tabindex="0">
-          <h3>Rebuild Confidence 💪</h3>
-          <p>Daily practices that rebuild confidence step by step.</p>
-        </article>
+        <article class="card" data-aos="fade-up" data-aos-delay="100"><h3>Talk Openly 🗣️</h3><p>Learn how to share feelings and listen without fear.</p></article>
+        <article class="card" data-aos="fade-up" data-aos-delay="250"><h3>Set Boundaries 🚧</h3><p>Discover healthy boundaries that protect both partners.</p></article>
+        <article class="card" data-aos="fade-up" data-aos-delay="400"><h3>Rebuild Confidence 💪</h3><p>Daily practices that rebuild confidence step by step.</p></article>
       </div>
     </div>
   </section>
@@ -169,20 +91,9 @@
   <section id="testimonials" class="section section-light">
     <div class="container">
       <h2 class="section-title">Real Voices, Real Healing 💬</h2>
-      <div class="testimonials">
-        <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="100" tabindex="0">
-          “This guide helped me and my partner reconnect after months of silence. Truly life-changing.”
-          <strong>— Emma R.</strong>
-        </blockquote>
-        <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="250" tabindex="0">
-          “The step‑by‑step advice made rebuilding trust feel manageable and hopeful.”
-          <strong>— Carlos M.</strong>
-        </blockquote>
-        <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="400" tabindex="0">
-          “A safe space and the right tools to heal. Highly recommend the Telegram group too!”
-          <strong>— Aisha K.</strong>
-        </blockquote>
-      </div>
+      <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="100">“This guide helped me and my partner reconnect after months of silence.” <strong>— Emma R.</strong></blockquote>
+      <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="250">“The advice made rebuilding trust feel manageable.” <strong>— Carlos M.</strong></blockquote>
+      <blockquote class="testimonial" data-aos="fade-up" data-aos-delay="400">“A safe space and the right tools to heal.” <strong>— Aisha K.</strong></blockquote>
     </div>
   </section>
 
@@ -191,102 +102,86 @@
     <div class="container">
       <h2 class="section-title">Daily Tips for Stronger Trust 🌱</h2>
       <ul class="tips-list">
-        <li>🗣️ Speak your truth gently and listen with an open heart.</li>
-        <li>⏳ Give each other time — healing can’t be rushed.</li>
-        <li>🤝 Show appreciation for small acts of honesty and kindness.</li>
-        <li>🧘‍♀️ Practice patience and self‑care to stay grounded.</li>
-        <li>💞 Reaffirm your commitment daily with loving words or actions.</li>
+        <li>🗣️ Speak your truth gently.</li>
+        <li>⏳ Healing takes time.</li>
+        <li>🤝 Appreciate small acts of honesty.</li>
+        <li>🧘‍♀️ Stay grounded through self-care.</li>
+        <li>💖 Reaffirm your love daily.</li>
       </ul>
     </div>
   </section>
 
-  <!-- 📥 Free Download -->
+  <!-- 📅 Download Guide -->
   <section id="download" class="section section-light" data-aos="fade-up">
     <div class="container download-container">
-      <h2 class="section-title">Get Your Free Trust‑Building Guide 📥</h2>
-      <form action="#" method="post" novalidate>
+      <h2 class="section-title">Get Your Free Trust‑Building Guide 📅</h2>
+      <form name="trust-guide" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou.html">
+        <input type="hidden" name="form-name" value="trust-guide" />
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
         <div class="form-row">
-          <input type="text" name="name" placeholder="Name" required/>
-          <input type="email" name="email" placeholder="Email" required/>
+          <input type="text" name="name" placeholder="Name" required />
+          <input type="tel" name="whatsapp" placeholder="WhatsApp" required/>
+          
         </div>
         <div class="form-row">
-          <input type="tel" name="whatsapp" placeholder="WhatsApp (optional)"/>
+          <input type="email" name="email" placeholder="Email (optional)" />
         </div>
         <label class="checkbox-label">
-          <input type="checkbox" name="updates" required/>
-          I agree to receive relationship support updates
+          <input type="checkbox" name="updates" required /> I agree to receive relationship support updates
         </label>
-        <button type="submit" class="btn btn-glow">Send Me the Guide</button>
+        <button type="submit" class="btn btn-glow">We Don’t Rebuild Love. We Rebuild Trust.🟢 Talk to us on Whatsapp</button>
       </form>
     </div>
   </section>
 
-  <!-- 👫 Community -->
+  <!-- 👥 Community -->
   <section id="community" class="section section-dark" data-aos="fade-up">
     <div class="container community-container">
-      <button class="btn btn-pulse"
-              onclick="window.open('https://t.me/yourTrustTalkGroup','_blank')"
-              aria-label="Join our Telegram Group">
-        Join Our Trust Talk Telegram Group
-        <lottie-player
-          src="https://assets4.lottiefiles.com/packages/lf20_dvlnu6om.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-          style="width:30px;height:30px;margin-left:8px"
-          aria-hidden="true">
-        </lottie-player>
+      <button class="btn btn-pulse" onclick="window.open('https://t.me/@love_rebuild_01','_blank')">
+        📩Join Our Trust Talk Telegram Group
       </button>
       <p>A safe space to share and grow together.</p>
     </div>
   </section>
 
-  <!-- Floating Buttons -->
-  <button id="scrollToTop" aria-label="Scroll to top">
-    <lottie-player
-      src="https://assets5.lottiefiles.com/packages/lf20_tutvdkg0.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay
-      style="width:50px;height:50px"
-      aria-hidden="true">
-    </lottie-player>
-  </button>
-    <lottie-player
-      src="https://assets4.lottiefiles.com/packages/lf20_dvlnu6om.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay
-      style="width:60px;height:60px"
-      aria-hidden="true">
-    </lottie-player>
-  </a>
   <!-- 📄 Footer -->
- <footer id="footer" class="footer">
+  <footer id="footer" class="footer">
   <div class="container footer-container">
     <p class="footer-text">
-      © 2025 <strong>TrustRebuild</strong>. All rights reserved.<br />
-      We respect your privacy. Your information will only be used for relationship support purposes.
+      © 2025 <strong>TrustRebuild</strong>. All rights reserved.<br />
+      We respect your privacy.
     </p>
-    
-    <nav class="footer-nav">
-      <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      <span>|</span>
-      <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
-      <span>|</span>
-      <a href="disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="pages/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+      <span> | </span>
+      <a href="pages/terms.html" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+      <span> | </span>
+      <a href="pages/disclaimer.html" target="_blank" rel="noopener noreferrer">Disclaimer</a>
     </nav>
-    
     <p class="footer-contact">
-      Need help? Contact us at <a href="mailto:support@example.com">support@example.com</a>
+      Need help? Contact <a href="mailto:support@example.com">support@example.com</a>
     </p>
   </div>
 </footer>
-  <!-- AOS & main JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script>
+    AOS.init();
+    new Typed("#typed-headline", {
+      strings: ["Rebuild Trust,", "Heal Your Love 💖"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
+  <!-- Floating WhatsApp (desktop: icon + text, mobile: icon only) -->
+ <a href="https://wa.me/0000000000" class="whatsapp-desktop" target="_blank">
+  💘Contact us</a>
+   <a href="https://wa.me/0000000000" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+  <img src="assets/images/whatsapp.png" alt="WhatsApp" />
+</a>
+<script src="JS/script.js"></script>
 </body>
 </html>
