@@ -39,4 +39,26 @@ else {
     opacity: cs.opacity,
     visibility: cs.visibility,
   });
+
+  window.addEventListener("load", function(){
+  if (!localStorage.getItem("cookiesAccepted")) {
+    const consent = document.createElement("div");
+    consent.innerHTML = `
+      <div style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: white; padding: 15px; text-align: center; z-index: 9999;">
+        🍪 We use cookies to improve your experience. By using our site, you agree to our 
+        <a href="/privacy.html" style="color: #00f;">Privacy Policy</a>. 
+        <button id="acceptCookies" style="margin-left: 10px; padding: 5px 15px;">Accept</button>
+      </div>
+    `;
+    document.body.appendChild(consent);
+    document.getElementById("acceptCookies").onclick = function() {
+      localStorage.setItem("cookiesAccepted", true);
+      consent.remove();
+    };
+  }
+});
+
+
 }
+
+fbq('init', '123456789012345');

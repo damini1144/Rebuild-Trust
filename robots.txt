@@ -1,3 +1,4 @@
 User-agent: *
-Disallow:
-Sitemap: https://yourdomain.com/sitemap.xml
+Disallow: /thankyou.html
+Disallow: /admin/
+Sitemap: https://rebuildlove.lat/sitemap.xml
