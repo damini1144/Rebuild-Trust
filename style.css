@@ -358,12 +358,12 @@ input[type="tel"] {
   box-shadow: 0 0 20px rgba(255,99,222,.3);    /* slightly softer glow */
 }
 
-/* WhatsApp Buttons */
-.whatsapp-desktop {
+/* Telegram Buttons */
+.telegram-desktop {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background-color: #229ED9;
   color: white;
   padding: 12px 20px;
   font-weight: bold;
@@ -371,76 +371,77 @@ input[type="tel"] {
   text-decoration: none;
   font-size: 1rem;
   z-index: 999;
-  box-shadow: 0 0 15px #25D366;
-  animation: blinkGlow 1.5s infinite;
+  box-shadow: 0 0 15px #229ED9;
+  animation: blinkGlowTelegram 1.5s infinite;
 }
 
-.whatsapp-float {
+.telegram-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 60px;
   height: 60px;
   z-index: 999;
-  background-color: rgba(37, 211, 102, 0.4);
+  background-color: rgba(34, 158, 217, 0.4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 8px rgba(37, 211, 102, 0.3), 0 0 16px rgba(37, 211, 102, 0);
-  animation: blinkGlow 0.5s infinite;
+  box-shadow: 0 0 8px rgba(34, 158, 217, 0.3), 0 0 16px rgba(34, 158, 217, 0);
+  animation: blinkGlowTelegram 0.5s infinite;
   backdrop-filter: blur(2px);
 }
 
-.whatsapp-float img {
+.telegram-float img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.whatsapp-inline-btn {
+.telegram-inline-btn {
   display: inline-block;
-  background-color: #4be958;
+  background-color: #229ED9;
   color: white;
   padding: 0.9rem 1.8rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
-  animation: blinkGlow 1.5s infinite;
+  animation: blinkGlowTelegram 1.5s infinite;
   transition: background 0.3s ease;
 }
 
-.whatsapp-inline-btn i {
+.telegram-inline-btn i {
   margin-right: 10px;
   font-size: 1.2rem;
 }
 
-.whatsapp-inline-btn:hover {
-  background-color: #1ebd5b;
+.telegram-inline-btn:hover {
+  background-color: #1a8bb4;
 }
 
-@keyframes blinkGlow {
+@keyframes blinkGlowTelegram {
   0%, 100% {
     opacity: 1;
-    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 0 10px rgba(34, 158, 217, 0.6), 0 0 20px rgba(34, 158, 217, 0.3);
   }
   50% {
     opacity: 0.6;
-    box-shadow: 0 0 20px rgba(37, 211, 102, 1), 0 0 40px rgba(37, 211, 102, 0.8);
+    box-shadow: 0 0 20px rgba(34, 158, 217, 1), 0 0 40px rgba(34, 158, 217, 0.8);
   }
 }
 
 @media (max-width: 768px) {
-  .whatsapp-desktop {
+  .telegram-desktop {
     display: none;
   }
 }
 
 @media (min-width: 769px) {
-  .whatsapp-float {
+  .telegram-float {
     display: none;
   }
 }
+
 
 
