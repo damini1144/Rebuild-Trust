@@ -443,5 +443,16 @@ input[type="tel"] {
   }
 }
 
+@media screen and (max-width: 767px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: #fff; /* or match your header background */
+  }
 
+  body {
+    padding-top: 60px; /* Adjust based on your header height */
+  }
+}
 
