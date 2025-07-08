@@ -1,4 +1,10 @@
-/* Base Styles */
+/* ─────── Reset & Base Styles ─────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
@@ -6,14 +12,19 @@ body {
   color: #333;
 }
 
-/* Navbar */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ─────── Navbar ─────────────────────────────── */
 .navbar {
   background-color: #fff;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 15px 0;
+  padding: 12px 0;
 }
 
 .nav-container {
@@ -41,7 +52,7 @@ body {
   color: #007BFF;
 }
 
-/* Hero Section */
+/* ─────── Hero Section ─────────────────────────────── */
 .hero-section {
   background: url('assets/images/banner.webp') center center / cover no-repeat;
   position: relative;
@@ -91,19 +102,20 @@ body {
   box-shadow: 0 0 10px rgba(0,123,255,0.5);
 }
 
+/* Click effect */
 .btn-clicked {
   transform: scale(0.96);
   box-shadow: 0 0 0 2px #007BFF inset;
   transition: transform 0.1s, box-shadow 0.2s;
 }
 
-/* Section Styles */
+/* ─────── Sections ─────────────────────────────── */
 .section {
   padding: 80px 20px;
 }
 
 .section-light {
-  background-color: #bebdbd;
+  background-color: #f5f5f5;
 }
 
 .section-dark {
@@ -137,46 +149,41 @@ body {
   text-align: center;
 }
 
-/* Emotion Section Fix */
-#emotional .section-lottie {
-  border: 1px solid transparent;
-  border-radius: 18px;
-  background: linear-gradient(45deg,#ff66d4 0%,#ffa33b 50%,#53e7f2 100%) border-box;
-  box-shadow: 0 0 20px rgba(255,99,222,.3);
-  padding: 0;
-  margin-top: 1.5rem;
-  max-width: 100%;
-  width: 500px;
-}
-
-@media (max-width: 768px) {
-  #emotional .section-lottie {
-    width: 90%;
-    max-width: 90vw;
-    height: auto;
-  }
-}
-
-/* Testimonials */
 .testimonial {
   font-style: italic;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* Tips List */
+/* ─────── Tips List ─────────────────────────────── */
 .tips-list {
   max-width: 600px;
   margin: auto;
   padding-left: 1.5rem;
-  line-height: 2;
+  list-style: none;
 }
 
-/* Download Form */
+.tips-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.tips-list li::before {
+  content: "❤️";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ─────── Form Styles ─────────────────────────────── */
 .download-container {
-  max-width: 800px;
+  max-width: 600px;
   margin: auto;
+  background: white;
   padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .download-container form {
@@ -197,26 +204,14 @@ input[type="tel"] {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  width: 100%;
+  font-size: 1rem;
 }
 
 .checkbox-label {
   font-size: 0.9rem;
 }
 
-@media (min-width: 768px) {
-  .form-row {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-  }
-
-  .form-row input {
-    flex: 1;
-  }
-}
-
-/* Footer */
+/* ─────── Footer ─────────────────────────────── */
 .footer {
   background: #222;
   color: #ccc;
@@ -239,43 +234,45 @@ input[type="tel"] {
   text-decoration: underline;
 }
 
-/* Logo */
-.logo {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-weight:700;
-  font-size:1.35rem;
-  color:#ffffff;
-  text-decoration:none;
+/* ─────── Responsive ─────────────────────────────── */
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+  }
+
+  .form-row input {
+    flex: 1;
+  }
 }
 
-.logo img {
-  height:32px;
-  width:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 0 3px #dbbc07);
+.hidden {
+  display: none;
 }
 
-.logo-text {
-  color:#ffffff !important;
-  text-shadow:0 0 6px rgba(255,255,255,0.6);
-}
-
+/* ─────── Navbar Logo ─────────────────────────────── */
 .navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.35rem;
   color: #ee32ee !important;
+  text-decoration: none !important;
 }
 
 .navbar .logo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
   filter: drop-shadow(0 0 3px #eb25e1);
 }
 
-.navbar .logo-text {
+.logo-text {
   color: #ffffff !important;
-  text-shadow: 0 0 6px rgba(200, 196, 201, 0.6);
+  text-shadow: 0 0 6px rgba(255,255,255,0.6);
 }
 
-/* Center Sections */
+/* ─────── Section Centering ─────────────────────────────── */
 #welcome-love .love-container,
 #community .community-container,
 #emotional .container {
@@ -285,7 +282,26 @@ input[type="tel"] {
   text-align: center;
 }
 
-/* Telegram Buttons */
+/* ─────── Emotional Section Video ─────────────────────────────── */
+#emotional .section-lottie {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(45deg,#ff66d4 0%,#ffa33b 50%,#53e7f2 100%) border-box;
+  box-shadow: 0 0 20px rgba(255,99,222,.3);
+  padding: 0;
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 720px;
+}
+
+@media (max-width: 767px) {
+  #emotional .section-lottie {
+    max-width: 100%;
+    margin: 1rem;
+  }
+}
+
+/* ─────── Telegram Button ─────────────────────────────── */
 .telegram-desktop,
 .telegram-float {
   position: fixed;
@@ -338,6 +354,11 @@ input[type="tel"] {
   transition: background 0.3s ease;
 }
 
+.telegram-inline-btn i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
 .telegram-inline-btn:hover {
   background-color: #1a8bb4;
 }
@@ -353,29 +374,16 @@ input[type="tel"] {
   }
 }
 
-/* Hide Telegram on Mobile/Desktop */
+/* Hide desktop telegram button on small screens */
 @media (max-width: 768px) {
   .telegram-desktop {
     display: none;
   }
 }
 
+/* Hide float on large screens */
 @media (min-width: 769px) {
   .telegram-float {
     display: none;
-  }
-}
-
-/* Sticky Header on Mobile */
-@media screen and (max-width: 767px) {
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background: #fff;
-  }
-
-  body {
-    padding-top: 60px;
   }
 }
