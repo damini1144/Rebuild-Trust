@@ -1,20 +1,9 @@
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Base Styles */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   background-color: #fdfdfd;
   color: #333;
-}
-
-img {
-  max-width: 100%;
-  display: block;
 }
 
 /* Navbar */
@@ -24,7 +13,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .nav-container {
@@ -102,14 +91,13 @@ img {
   box-shadow: 0 0 10px rgba(0,123,255,0.5);
 }
 
-/* Click effect */
 .btn-clicked {
   transform: scale(0.96);
   box-shadow: 0 0 0 2px #007BFF inset;
   transition: transform 0.1s, box-shadow 0.2s;
 }
 
-/* Sections */
+/* Section Styles */
 .section {
   padding: 80px 20px;
 }
@@ -149,12 +137,34 @@ img {
   text-align: center;
 }
 
+/* Emotion Section Fix */
+#emotional .section-lottie {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(45deg,#ff66d4 0%,#ffa33b 50%,#53e7f2 100%) border-box;
+  box-shadow: 0 0 20px rgba(255,99,222,.3);
+  padding: 0;
+  margin-top: 1.5rem;
+  max-width: 100%;
+  width: 500px;
+}
+
+@media (max-width: 768px) {
+  #emotional .section-lottie {
+    width: 90%;
+    max-width: 90vw;
+    height: auto;
+  }
+}
+
+/* Testimonials */
 .testimonial {
   font-style: italic;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/* Tips List */
 .tips-list {
   max-width: 600px;
   margin: auto;
@@ -162,9 +172,14 @@ img {
   line-height: 2;
 }
 
-.download-container form {
-  max-width: 600px;
+/* Download Form */
+.download-container {
+  max-width: 800px;
   margin: auto;
+  padding: 2rem;
+}
+
+.download-container form {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -179,13 +194,26 @@ img {
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  width: 100%;
 }
 
 .checkbox-label {
   font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .form-row input {
+    flex: 1;
+  }
 }
 
 /* Footer */
@@ -211,23 +239,8 @@ input[type="tel"] {
   text-decoration: underline;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .form-row {
-    flex-direction: row;
-  }
-
-  .form-row input {
-    flex: 1;
-  }
-}
-
-.hidden {
-  display: none;
-}
-
-/* ─── Navbar logo ───────────────────────────── */
-.logo{
+/* Logo */
+.logo {
   display:flex;
   align-items:center;
   gap:8px;
@@ -236,133 +249,52 @@ input[type="tel"] {
   color:#ffffff;
   text-decoration:none;
 }
-.logo:visited{ color:#ffffff; }
-.logo:hover { color:#ffd6d6; }
 
-.logo img{
+.logo img {
   height:32px;
   width:auto;
   object-fit:contain;
   filter:drop-shadow(0 0 3px #dbbc07);
 }
 
-.logo-text{
+.logo-text {
   color:#ffffff !important;
   text-shadow:0 0 6px rgba(255,255,255,0.6);
 }
 
-/* Center the LOVE section content */
-#welcome-love .love-container{
-  display:flex;
-  flex-direction:column;
-  align-items:center;   /* ✨ centers children horizontally */
-  text-align:center;    /* optional – keeps text centred too */
+.navbar .logo {
+  color: #ee32ee !important;
 }
 
-/* Center the COMMUNITY section content */
-#community .community-container{
-  display:flex;
-  flex-direction:column;
-  align-items:center;   /* ✨ */
-  text-align:center;
+.navbar .logo img {
+  filter: drop-shadow(0 0 3px #eb25e1);
 }
 
-/* ── FINAL logo‑text fix ───────────────────────────────────────── */
-.logo {                       /* anchor itself */
-  display:flex !important;
-  align-items:center !important;
-  gap:8px !important;         /* separates icon and text */
-  text-decoration:none !important;
-  color:#ffffff !important;   /* white for anchor as fallback */
+.navbar .logo-text {
+  color: #ffffff !important;
+  text-shadow: 0 0 6px rgba(200, 196, 201, 0.6);
 }
 
-.logo img {
-  height:32px; width:auto;    /* keep aspect */
-  margin-right:8px;           /* ensure some spacing */
-}
-
-.logo-text {                  /* the span */
-  display:inline-block !important;
-  visibility:visible !important;
-  color:#ffffff !important;   /* pure white */
-  font-weight:700 !important;
-  text-shadow:0 0 6px rgba(255,255,255,0.6);
-}
-
-/* ensure no link state overrides it */
-.logo:visited,
-.logo:hover,
-.logo:focus {
-  color:#ffffff !important;
-}
-
-/* ─── FINAL & ONLY navbar‑logo rule ──────────────────────────── */
-.navbar .logo{                 /* anchor */
-  display:flex !important;
-  align-items:center !important;
-  gap:8px !important;
-  text-decoration:none !important;
-  color:#ee32ee !important;          /* pure white */
-  font-weight:700;
-  font-size:1.35rem;
-}
-
-.navbar .logo img{             /* icon */
-  height:32px !important;
-  width:auto !important;
-  object-fit:contain;
-  filter:drop-shadow(0 0 3px #eb25e1);
-}
-
-/* text beside the icon */
-.navbar .logo-text{
-  display:inline-block !important;
-  color:#ffffff !important;          /* force white */
-  text-shadow:0 0 6px rgba(200, 196, 201, 0.6);
-  font-weight:700;
-}
-
-.navbar .logo:visited,
-.navbar .logo:hover,
-.navbar .logo:focus,
-.navbar .logo:hover .logo-text{
-  color:#ffffff !important;          /* never dull or blue */
-}
-/* centre the entire “You’re Not Alone” block */
-#emotional .container{
-  display:flex;             /* stack elements vertically */
-  flex-direction:column;
-  align-items:center;       /* ⇢ centres video + text */
-  text-align:center;        /* centres the <p> text */
-}
-
-/* add beneath your existing .section-lottie rule */
-#emotional .section-lottie{
-  border: 6px solid transparent;               /* keeps rounded corners crisp */
-  border-radius: 18px;
-  background:                               /* colorful frame */
-    linear-gradient(45deg,#ff66d4 0%,#ffa33b 50%,#53e7f2 100%)
-    border-box;                             /* makes gradient stay on border */
-  box-shadow: 0 0 25px rgba(255,99,222,.35);  /* soft glow */
-  padding: 0;                                /* no extra spacing */
-  margin-top: 1.5rem;
-}
-
-/* Stylish frame for the couple video */
-#emotional .section-lottie{
-  border: 1px solid transparent;               /* ⬅️ reduced from 6 px to 3 px */
-  border-radius: 18px;
-  background:
-    linear-gradient(45deg,#ff66d4 0%,#ffa33b 50%,#53e7f2 100%)
-    border-box;
-  box-shadow: 0 0 20px rgba(255,99,222,.3);    /* slightly softer glow */
+/* Center Sections */
+#welcome-love .love-container,
+#community .community-container,
+#emotional .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 /* Telegram Buttons */
-.telegram-desktop {
+.telegram-desktop,
+.telegram-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 999;
+}
+
+.telegram-desktop {
   background-color: #229ED9;
   color: white;
   padding: 12px 20px;
@@ -370,18 +302,13 @@ input[type="tel"] {
   border-radius: 5px;
   text-decoration: none;
   font-size: 1rem;
-  z-index: 999;
   box-shadow: 0 0 15px #229ED9;
   animation: blinkGlowTelegram 1.5s infinite;
 }
 
 .telegram-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   width: 60px;
   height: 60px;
-  z-index: 999;
   background-color: rgba(34, 158, 217, 0.4);
   border-radius: 50%;
   display: flex;
@@ -411,11 +338,6 @@ input[type="tel"] {
   transition: background 0.3s ease;
 }
 
-.telegram-inline-btn i {
-  margin-right: 10px;
-  font-size: 1.2rem;
-}
-
 .telegram-inline-btn:hover {
   background-color: #1a8bb4;
 }
@@ -431,6 +353,7 @@ input[type="tel"] {
   }
 }
 
+/* Hide Telegram on Mobile/Desktop */
 @media (max-width: 768px) {
   .telegram-desktop {
     display: none;
@@ -443,22 +366,16 @@ input[type="tel"] {
   }
 }
 
+/* Sticky Header on Mobile */
 @media screen and (max-width: 767px) {
   header {
     position: sticky;
     top: 0;
     z-index: 999;
-    background: #fff; /* or match your header background */
+    background: #fff;
   }
 
   body {
-    padding-top: 60px; /* Adjust based on your header height */
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .mobile-nav {
-    max-height: 80vh;
-    overflow-y: auto;
+    padding-top: 60px;
   }
 }
