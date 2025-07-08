@@ -252,11 +252,11 @@ input[type="tel"] {
 /* ─────── Navbar Logo ─────────────────────────────── */
 .navbar .logo {
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 8px;
   font-weight: 700;
   font-size: 1.35rem;
-  color: #ee32ee !important;
+  color: #dd8006 !important;
   text-decoration: none !important;
 }
 
@@ -264,7 +264,7 @@ input[type="tel"] {
   height: 32px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 3px #eb25e1);
+  filter: drop-shadow(0 0 3px #ee9c04);
 }
 
 .logo-text {
