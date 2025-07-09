@@ -19,7 +19,7 @@ img {
 
 /* ─────── Navbar ─────────────────────────────── */
 .navbar {
-  background-color: #fff;
+  background-color: #f010e5;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -253,10 +253,7 @@ input[type="tel"] {
 .navbar .logo {
   display: flex;
   align-items: center;
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  background-color: black;
+  
   gap: 8px;
   font-weight: 700;
   font-size: 1.35rem;
@@ -265,11 +262,8 @@ input[type="tel"] {
 }
 
 .navbar .logo img {
-  height: 40px;
+  height: 32px;
   width: auto;
-  display: block;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
   object-fit: contain;
   filter: drop-shadow(0 0 3px #eba625);
 }
@@ -394,4 +388,92 @@ input[type="tel"] {
   .telegram-float {
     display: none;
   }
+}
+
+/* ─────── Pricing Section ───────────────────────── */
+.pricing-section {
+  background: #fafafa;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ee32ee;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  color: #333;
+}
+
+.pricing-card ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.btn {
+  background: #ee32ee;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #d020d0;
+}
+
+.btn.primary {
+  background: #d020d0;
+}
+
+/* Highlight featured (middle) card */
+.pricing-card.featured {
+  border: 2px solid #ee32ee;
+  box-shadow: 0 8px 30px rgba(238, 50, 238, 0.15);
 }
